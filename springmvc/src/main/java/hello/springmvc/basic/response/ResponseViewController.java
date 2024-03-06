@@ -20,7 +20,7 @@ public class ResponseViewController {
     // String으로 반환되는 경우
     // 반환되는 문자열로 랜더링이 됨.
     // 주의
-    //@ResponseBody 가 있으면 뷰 리졸버를 실행하지 않고, HTTP 메시지 바디에 직접 response/hello 라는 문자가
+    //@ResponseBody가 있으면 뷰 리졸버를 실행하지 않고, HTTP 메시지 바디에 직접 response/hello 라는 문자가
     //입력된다.
     @RequestMapping("/response-view-v2")
     public String responseViewV2(Model model) {

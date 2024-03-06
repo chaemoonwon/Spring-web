@@ -91,6 +91,7 @@ public class RequestBodyJsonController {
 
 
     //requestBodyJsonV4 - HttpEntity
+    //String 값으로 응답이 됨.
     @ResponseBody
     @PostMapping("/request-body-json-v4")
     public String requestBodyJsonV4(HttpEntity<HelloData> data) {
@@ -105,9 +106,10 @@ public class RequestBodyJsonController {
     * @ResponseBody
 응답의 경우에도 @ResponseBody 를 사용하면 해당 객체를 HTTP 메시지 바디에 직접 넣어줄 수 있다.
 물론 이 경우에도 HttpEntity 를 사용해도 된다.
-* */
+    */
 
     // 객체가 요청할 때 Json으로 변환되어서, 응답할 때도 Json으로 응답이 됨.
+    // HelloData 객체로 응답이 됨.
     @ResponseBody
     @PostMapping("/request-body-json-v5")
     public HelloData requestBodyJsonV5(@RequestBody HelloData data){
