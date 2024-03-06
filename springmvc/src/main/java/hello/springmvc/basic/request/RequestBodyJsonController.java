@@ -71,13 +71,24 @@ public class RequestBodyJsonController {
     HttpMessageConverter 사용 -> MappingJackson2HttpMessageConverter (content-type:
     application/json)
      */
+    //RequestBody 생략 X => 객체가 생성되고 요청 값이 변환되어서 응답되는 것을 확인할 수 있음
     @ResponseBody
-    @PostMapping("/request-body-json-v3")
-    public String requestBodyJsonV3(HelloData data) throws IOException {
+    @PostMapping("/request-body-json-v3-2")
+    public String requestBodyJsonV3_1(@RequestBody HelloData data) {
         log.info("username ={}, age ={}", data.getUsername(), data.getAge());
 
         return "ok";
     }
+
+    //RequestBody 생략 O => ModelAttribute가 적용되기 때문에 =>객체만 생성되고 요청 값이 전달 되지 않음
+    @ResponseBody
+    @PostMapping("/request-body-json-v3-1")
+    public String requestBodyJsonV3(HelloData data) {
+        log.info("username ={}, age ={}", data.getUsername(), data.getAge());
+
+        return "ok";
+    }
+
 
     //requestBodyJsonV4 - HttpEntity
     @ResponseBody
