@@ -21,7 +21,6 @@ public class ItemRepository {
 
     public Item findById(Long id) {
         return store.get(id);
-
     }
 
     public List<Item> findAll() {
